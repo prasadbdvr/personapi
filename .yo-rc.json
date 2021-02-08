@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.company.data"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "personapi",
+    "packageName": "com.company.data",
+    "packageFolder": "com/company/data",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YWFiMzkxNmQ3MmVkZTFkYjU1YzgyNzUwNzZhMzRjNDc4NGQ5MzU3MGM3YmE2ZmQyZGExYmM3MTBhMDIyMmMzNzMxZDU4ZWEzODM1NTExNGRkOWI0YzE5NmRjZDdiOGFmNzU5MjEzNTViNGYwZjk5ZjY0M2ExN2IzYWJlZDE2Y2I=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1612762230514,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
