@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: person-api
+  namespace: person
+  labels:
+    app: person-api
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: person-api
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: person-api
+        version: v1
+    spec:
+      containers:
+        - name: person-api
+          image: wongdoody/personapi:stg
+          env:
+            - name: JAVA_OPTS
+              value: '-Xmx1024m -Xms512m'
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://personapi-postgresql:5432/personapi
+            - name: SPRING_DATASOURCE_USERNAME
+              value: personapi
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: personapi
+
+          ports:
+            - containerPort: 4700
+
+status: {}
