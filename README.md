@@ -107,4 +107,4 @@ URL = http://localhost:8081/api/token
 Person resouce:
 Suported Method = GET, POST, PUT, DELETE
 URL = http://localhost:8081/api/people
-Request headers  : Authorization = Bearer generatedtoken
+Request headers  : Authorization = Bearer <<Generated Token>>
