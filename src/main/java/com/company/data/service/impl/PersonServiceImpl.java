@@ -1,20 +1,22 @@
 package com.company.data.service.impl;
 
-import com.company.data.service.PersonService;
-import com.company.data.domain.Person;
-import com.company.data.repository.PersonRepository;
-import com.company.data.service.dto.PersonDTO;
-import com.company.data.service.mapper.PersonMapper;
+import static com.company.data.repository.PersonSpecification.applyFilters;
+import static org.springframework.data.jpa.domain.Specification.where;
+
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import com.company.data.domain.Person;
+import com.company.data.repository.PersonRepository;
+import com.company.data.service.PersonService;
+import com.company.data.service.dto.PersonDTO;
+import com.company.data.service.mapper.PersonMapper;
 
 /**
  * Service Implementation for managing {@link Person}.
@@ -44,11 +46,10 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<PersonDTO> findAll() {
+    public Page<PersonDTO> findAll(Pageable pageable, PersonDTO person) {
         log.debug("Request to get all People");
-        return personRepository.findAll().stream()
-            .map(personMapper::toDto)
-            .collect(Collectors.toCollection(LinkedList::new));
+        
+        return personRepository.findAll(where(applyFilters(person)), pageable).map(personMapper::toDto);
     }
 
 

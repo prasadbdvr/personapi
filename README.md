@@ -129,3 +129,18 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [running tests page]: https://www.jhipster.tech/documentation-archive/v6.10.1/running-tests/
 [code quality page]: https://www.jhipster.tech/documentation-archive/v6.10.1/code-quality/
 [setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v6.10.1/setting-up-ci/
+
+## API access details
+
+Swagger UI : http://localhost:8081/swagger-ui.html
+Database H2 webconsole: http://localhost:8081/h2-console
+
+API are secured with JWT token.
+Get token:
+Method = GET
+URL = http://localhost:8081/api/token
+
+Person resouce:
+Suported Method = GET, POST, PUT, DELETE
+URL = http://localhost:8081/api/people
+Request headers --> Authorization = Bearer <<token>>

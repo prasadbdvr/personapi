@@ -5,6 +5,9 @@ import com.company.data.service.dto.PersonDTO;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 /**
  * Service Interface for managing {@link com.company.data.domain.Person}.
  */
@@ -23,7 +26,7 @@ public interface PersonService {
      *
      * @return the list of entities.
      */
-    List<PersonDTO> findAll();
+    Page<PersonDTO> findAll(Pageable pageable, PersonDTO person);
 
 
     /**
