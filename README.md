@@ -94,10 +94,12 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 ## API access details
 
-Swagger UI : http://localhost:8081/swagger-ui.html
-Database H2 webconsole: http://localhost:8081/h2-console
+ Swagger UI : http://localhost:8081/swagger-ui.html
+ 
+ Database H2 webconsole: http://localhost:8081/h2-console
 
 API are secured with JWT token.
+
 Get token:
 Method = GET
 URL = http://localhost:8081/api/token
@@ -105,4 +107,4 @@ URL = http://localhost:8081/api/token
 Person resouce:
 Suported Method = GET, POST, PUT, DELETE
 URL = http://localhost:8081/api/people
-Request headers --> Authorization = Bearer <<token>>
+Request headers  : Authorization = Bearer <<token>>
