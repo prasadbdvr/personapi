@@ -92,11 +92,18 @@ docker-compose -f src/main/docker/app.yml up -d
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
+## Kubernetes deployment
+
+```
+kubectl apply -f src/main/kubernetes/personapi-deployment.yml
+kubectl apply -f src/main/kubernetes/personapi-service.yml
+```
+
 ## API access details
 
- Swagger UI : http://localhost:8081/swagger-ui.html
- 
- Database H2 webconsole: http://localhost:8081/h2-console
+Swagger UI : http://localhost:8081/swagger-ui.html
+
+Database H2 webconsole: http://localhost:8081/h2-console
 
 API are secured with JWT token.
 
@@ -107,4 +114,4 @@ URL = http://localhost:8081/api/token
 Person resouce:
 Suported Method = GET, POST, PUT, DELETE
 URL = http://localhost:8081/api/people
-Request headers  : Authorization = Bearer <<Generated Token>>
+Request headers : Authorization = Bearer <<Generated Token>>
