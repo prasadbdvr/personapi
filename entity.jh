@@ -1,0 +1,9 @@
+entity Person{
+    firstName String,
+    lastName String,
+    age Long,
+    favouriteColour String
+}
+// Use Data Transfert Objects (DTO)
+  dto * with mapstruct
+  service all with serviceImpl

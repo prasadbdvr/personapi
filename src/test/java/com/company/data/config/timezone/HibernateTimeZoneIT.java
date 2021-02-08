@@ -1,7 +1,6 @@
 package com.company.data.config.timezone;
 
 import com.company.data.PersonapiApp;
-import com.company.data.config.TestSecurityConfiguration;
 import com.company.data.repository.timezone.DateTimeWrapper;
 import com.company.data.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the ZoneId Hibernate configuration.
  */
-@SpringBootTest(classes = {PersonapiApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = PersonapiApp.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

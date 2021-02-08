@@ -45,7 +45,7 @@ spring:
       auto-commit: false
   h2:
     console:
-      enabled: false
+      enabled: true
   jpa:
     database-platform: io.github.jhipster.domain.util.FixedH2Dialect
     show-sql: true
@@ -90,6 +90,14 @@ jhipster:
   #     exposed-headers: "Authorization,Link,X-Total-Count"
   #     allow-credentials: true
   #     max-age: 1800
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: MzNmYmM4NTg2MjFlMWFhNzQ2NTJlNTkyYjY3NzIyYWQwYzVjZTJiMDVhMGM0YWY2ODk4NjRiYWZkOTE0NjQwMTA2NGQ0ZmZlMGEzZjk4ZTRhMWEyMjIwZjcwM2NjMTBhYWQ1YzE4MzU2ODhhMTUzODM0YzlhNGM3OTMwNjE1ZjY=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://127.0.0.1:8081
   metrics:
