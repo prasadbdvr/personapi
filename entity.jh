@@ -4,6 +4,6 @@ entity Person{
     age Long,
     favouriteColour String
 }
-// Use Data Transfert Objects (DTO)
+// Use Data Transfert Objects (DTO) 
   dto * with mapstruct
   service all with serviceImpl
